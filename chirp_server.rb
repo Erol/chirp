@@ -15,6 +15,7 @@ class ChirpServer < Sinatra::Base
   helpers Shield::Helpers
 
   get '/' do
+    slim :home
   end
 
   get '/signup' do
@@ -71,6 +72,8 @@ class ChirpServer < Sinatra::Base
   end
 
   get '/:username' do
+    pass if params[:username] == 'favicon.ico'
+
     user = User.find(:username => params[:username]).first
 
     slim :user, :locals => {:user => user}
