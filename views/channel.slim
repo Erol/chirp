@@ -1,0 +1,14 @@
+== slim :user_header, :locals => {:user => user}, :layout => false
+
+form action="/chirp" method="post"
+  fieldset
+    input type="text" name="chirp"
+    button type="submit"
+      span Chirp
+
+h2 Chirps
+
+- unless user.channel.empty?
+  ul#chirps
+    - user.channel.all.each do |chirp|
+      li == slim :chirp, :locals => {:chirp => chirp}, :layout => false

@@ -1,0 +1,8 @@
+== slim :user_header, :locals => {:user => user}, :layout => false
+
+h2 Mentions
+
+- unless user.mentions.empty?
+  ul#mentions
+    - user.mentions.all.each do |mention|
+      li == slim :chirp, :locals => {:chirp => mention}, :layout => false

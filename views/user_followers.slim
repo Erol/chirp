@@ -1,0 +1,10 @@
+== slim :user_header, :locals => {:user => user}, :layout => false
+
+h2 Followers
+
+- unless user.followers.empty?
+  ul#followers
+    - user.followers.all.each do |follower|
+      li
+        a href="/#{follower.username}"
+          = follower.username

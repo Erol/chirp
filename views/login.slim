@@ -1,0 +1,16 @@
+h1 Login
+
+- if defined?(errors)
+  div.errors
+    = errors
+
+form action="/login" method="post"
+  fieldset
+    label Username
+    input type="text" name="username" value=params[:username]
+
+    label Password
+    input type="password" name="password"
+
+    button type="submit"
+      span Login

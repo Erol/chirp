@@ -1,0 +1,16 @@
+h1
+  a href="/#{user.username}"
+    = user.username
+
+div#following
+  a href="/#{user.username}/following"
+    #{user.following.size} Following
+div#followers
+  a href="/#{user.username}/followers"
+    #{user.followers.size} Followers
+div#chirps
+  a href="/#{user.username}"
+    #{user.chirps.size} Chirps
+div#mentions
+  a href="/#{user.username}/mentions"
+    #{user.mentions.size} Mentions

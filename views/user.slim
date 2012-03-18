@@ -1,0 +1,8 @@
+== slim :user_header, :locals => {:user => user}, :layout => false
+
+h2 Chirps
+
+- unless user.chirps.empty?
+  ul#chirps
+    - user.chirps.all.each do |chirp|
+      li == slim :chirp, :locals => {:chirp => chirp}, :layout => false

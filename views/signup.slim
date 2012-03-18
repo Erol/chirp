@@ -1,0 +1,19 @@
+h1 Signup
+
+- if defined?(errors)
+  div.errors
+    == errors.join('<br />')
+
+form action="/signup" method="post"
+  fieldset
+    label Username
+    input type="text" name="username" value=params[:username]
+
+    label Password
+    input type="password" name="password"
+
+    label Confirm Password
+    input type="password" name="password_confirmation"
+
+    button type="submit"
+      span Signup
